@@ -1,3 +1,10 @@
 /household_power_consumption.txt
 /.Rhistory
 /.RData
+/allen2/training_set.tsv
+/allen/training_set.tsv
+/allen/validation_set.tsv
+/allen/obama.txt
+/allen/romney.txt
+/Source_Classification_Code.rds
+/summarySCC_PM25.rds

@@ -8,10 +8,9 @@ library(slam)
 max_rows<-2500
 
 
-my_stopwords<-c("best","can","following","likely",  # row_sums>150
-                "scientist","scientists","student","students","one","two","use","used","will")
-#                "describes","found","one","two","scientists","scientist","statement",
-#                "students","student","two","use","used","will")
+my_stopwords<-c("best","following","likely","can",  # row_sums>150
+                "one","scientists","will",          # row_sums>100
+                "student","students","scientist","within","across","like","may","without","outer","per","usually")  # row_sums>10
 
 
 
@@ -40,9 +39,17 @@ m.tf<-t(as.matrix(tdm.orig))
 
 #m.tf<-m.tf/row_sums(m.tf)
 
-zz<-col_sums(m.tf)
+zz<-col_sums(m.tf>0)
 z3<-zz
+
 
 #summary(z3)
 #z3[z3>100&z3<120]
 
+# удаляем те термы, которые встречаются в коллекции один раз
+#col.less.2<-zz[zz<2]
+#m.tf[,(eq1):=NULL]
+
+#ww<-row_sums(mm0>0)
+#names(ww)<-seq(1:2500)
+#row.less.2<-ww[ww<2]
